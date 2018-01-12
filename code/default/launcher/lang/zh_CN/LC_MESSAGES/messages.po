@@ -2,10 +2,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-11-19 10:30+0800\n"
-"PO-Revision-Date: 2015-12-16 20:43+0800\n"
-"Last-Translator: XX-Net <xxnet.dev@gmail.com>\n"
+"Report-Msgid-Bugs-To: xxnet.dev@gmail.com\n"
+"POT-Creation-Date: 2017-12-24 12:00+0800\n"
+"PO-Revision-Date: 2017-12-29 12:00+0800\n"
+"Last-Translator: Emphasia@github\n"
 "Language: zh_Hans_CN\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -38,26 +38,35 @@ msgstr "日志页"
 msgid "contents"
 msgstr "内容"
 
-msgid "Thanks the following projects"
+msgid "Thanks to the following projects"
 msgstr "感谢以下项目"
 
 msgid "About XX-Net"
-msgstr "关于XX-Net"
+msgstr "关于 XX-Net"
 
 msgid "General Settings"
-msgstr "通用设置"
+msgstr "通用"
 
-msgid "System Update"
-msgstr "系统升级"
+msgid "System Version"
+msgstr "版本"
 
 msgid "Proxy Setting"
-msgstr "代理设置"
+msgstr "代理"
 
-msgid "System configuration options"
-msgstr "系统配置选项"
+msgid "System Configuration"
+msgstr "系统配置"
 
-msgid "Settings saved successfully."
-msgstr "设置已成功保存"
+msgid "Configuring the service[%s]. This page will refresh within %s seconds."
+msgstr "正在配置服务[%s], 页面将在%s秒后刷新。"
+
+# msgid "GAE Proxy"
+# msgstr "GAE 代理"
+
+# msgid "X-Tunnel"
+# msgstr "X-Tunnel"
+
+# msgid "Smart Router"
+# msgstr "智能路由"
 
 msgid "Language"
 msgstr "语言"
@@ -68,8 +77,8 @@ msgstr "开机自动启动"
 msgid "Popup Status Page on Startup"
 msgstr "启动时弹出状态页"
 
-msgid "Enable Remote Web Control"
-msgstr "允许远程连接Web控制端"
+msgid "Allow Remote"
+msgstr "允许远程访问控制页"
 
 msgid "Help"
 msgstr "帮助"
@@ -78,7 +87,7 @@ msgid "Display System Tray(Restarting XX-Net Required)"
 msgstr "显示托盘图标(需要重启XX-Net)"
 
 msgid "Run as Green Software"
-msgstr "以绿色软件运行"
+msgstr "以绿色方式运行"
 
 msgid "Module management"
 msgstr "模块管理"
@@ -86,26 +95,20 @@ msgstr "模块管理"
 msgid "Enable"
 msgstr "启用"
 
-msgid "Configuring the service[%s]. This page will refresh within %s seconds."
-msgstr "正在配置服务[%s], 页面将在%s秒内刷新。"
+msgid "LAN proxy"
+msgstr "局域网代理（前置代理）"
 
-msgid "GAE Proxy"
-msgstr "GAE代理"
-
-msgid "X_tunnel proxy"
-msgstr "X_tunnel 代理"
-
-msgid "LAN proxy(Generally not needed)"
-msgstr "局域网代理（一般不需要设置）"
+msgid "Generally not needed, only those who need internal proxy to access the external network (companies, Intranet, campus, etc.) need to configure this."
+msgstr "一般无需设置，只有那些需要通过内部代理访问外网的用户才需要设置。"
 
 msgid "Proxy type"
 msgstr "代理类型"
 
 msgid "Proxy IP address or domain name"
-msgstr "代理IP地址或域名"
+msgstr "代理服务器"
 
 msgid "Port"
-msgstr "端口"
+msgstr "代理端口"
 
 msgid "User name"
 msgstr "用户名"
@@ -116,17 +119,20 @@ msgstr "密码"
 msgid "Save"
 msgstr "保存"
 
+msgid "Do you really need LAN proxy? <a href="https://github.com/XX-net/XX-Net/wiki/LAN-proxy-setting">Help</a>."
+msgstr "你似乎没有设置局域网代理的需要．．．（请查看<a href="https://github.com/XX-net/XX-Net/wiki/LAN-proxy-setting">帮助</a>）"
+
 msgid "Failed reading the settings."
-msgstr "读取设置失败"
+msgstr "读取设置失败。"
 
-msgid "Wait for checking setting..."
-msgstr "等待检查设置"
+msgid "Checking settings ..."
+msgstr "等待设置检查..."
 
-msgid "Settings saved successfully"
-msgstr "成功保存设置"
+msgid "Settings saved successfully."
+msgstr "保存设置成功。"
 
-msgid "Failed saving settings"
-msgstr "保存设置失败"
+msgid "Failed saving settings."
+msgstr "保存设置失败。"
 
 msgid "Auto-Upgrade to"
 msgstr "自动升级到"
@@ -155,35 +161,62 @@ msgstr "当前版本"
 msgid "Version of the test one"
 msgstr "测试版"
 
-msgid "Update now"
-msgstr "立即更新"
-
 msgid "Version of the stable one"
 msgstr "稳定版"
 
-msgid "All versions download page"
-msgstr "所有版本下载页面"
+msgid "Keep old versions count"
+msgstr "保留的旧版本数"
 
-msgid "Advanced"
-msgstr "高级"
+msgid "keep all"
+msgstr "保留全部"
+
+msgid "Update now"
+msgstr "立即更新"
 
 msgid "Manually Manage"
 msgstr "手动管理"
 
-msgid "Upgrade to"
-msgstr "升级到"
+msgid "Advanced"
+msgstr "高级"
+
+msgid "All versions download page"
+msgstr "全部已发布版本"
+
+msgid "Released version"
+msgstr "发布版本"
+
+msgid "Local version"
+msgstr "本地版本"
+
+msgid "Released"
+msgstr "发布的"
+
+msgid "Download & Change to"
+msgstr "下载并切至"
 
 msgid "no hash check"
 msgstr "不校验"
 
-msgid "Set as local version"
-msgstr "设置本地版本"
+msgid "Local"
+msgstr "本地的"
 
-msgid "Input version"
-msgstr "输入版本"
+msgid "Change to this version"
+msgstr "切至此版本"
+
+msgid "Delete"
+msgstr "删除此版本"
+
+msgid "Settings save fail:"
+msgstr "保存设置失败："
+
+msgid "Deleted successfully."
+msgstr "删除成功。"
+
+msgid "Deleting local version fail."
+msgstr "删除本地版本失败。"
 
 msgid "(Remote Web Control Enabled)"
-msgstr "(已允许远程连接)"
+msgstr "(已允许远程访问)"
 
 msgid "Adaptive width"
 msgstr "自适应宽度"
@@ -192,25 +225,25 @@ msgid "Exit the program"
 msgstr "退出程序"
 
 msgid "Remind me later"
-msgstr "下次再提醒我"
+msgstr "以后再提醒我"
 
 msgid "Do not remind me this version"
-msgstr "忽略这个版本"
+msgstr "忽略此版本"
 
 msgid "View changes"
 msgstr "显示变动"
 
-msgid "Exited successfully"
+msgid "Exited successfully."
 msgstr "退出成功。"
 
-msgid "Exitting failed"
+msgid "Exitting failed."
 msgstr "退出失败。"
 
 msgid "Exitting failed. A network error occurred."
-msgstr "退出失败，网络错误。"
+msgstr "退出失败，遇到网络错误。"
 
-msgid "Unkown error occured. Please refresh the page and try again"
-msgstr "发生未知错误, 请刷新页面重试。"
+msgid "Unkown error occured. Please refresh the page and try again."
+msgstr "发生未知错误，请刷新页面重试。"
 
 msgid "Updating in progress ..."
 msgstr "更新进行中..."
@@ -219,10 +252,10 @@ msgid "New "
 msgstr "新"
 
 msgid "Downloading ..."
-msgstr "下载中……"
+msgstr "下载中..."
 
-msgid "Download completed"
-msgstr "下载完成"
+msgid "Download completed."
+msgstr "下载完成。"
 
 msgid "System"
 msgstr "系统"
@@ -232,5 +265,4 @@ msgstr "配置"
 
 msgid "About"
 msgstr "关于"
-
 

@@ -87,7 +87,7 @@ class HTTP2_worker(HTTP_worker):
         self.next_stream_id = 1
         self.streams = {}
         self.last_ping_time = time.time()
-        self.last_active_time = self.ssl_sock.create_time
+        self.last_active_time = self.ssl_sock.create_time - 1
 
         # count ping not ACK
         # increase when send ping
@@ -211,7 +211,7 @@ class HTTP2_worker(HTTP_worker):
     def get_rtt_rate(self):
         return self.rtt + len(self.streams) * 3000
 
-    def close(self, reason=""):
+    def close(self, reason="conn close"):
         self.keep_running = False
         self.accept_task = False
         # Notify loop to exit
@@ -390,7 +390,7 @@ class HTTP2_worker(HTTP_worker):
                 p.flags.add('ACK')
                 p.opaque_data = frame.opaque_data
                 self._send_cb(p)
-            self.last_active_time = time.time()
+            # self.last_active_time = time.time()
 
         elif frame.type == SettingsFrame.type:
             if 'ACK' not in frame.flags:
@@ -465,5 +465,5 @@ class HTTP2_worker(HTTP_worker):
         out_list = []
         out_list.append(" processed:%d" % self.processed_tasks)
         out_list.append(" h2.stream_num:%d" % len(self.streams))
-        out_list.append(" sni:%s" % self.ssl_sock.sni)
+        out_list.append(" sni:%s, domain:%s" % (self.ssl_sock.sni, self.ssl_sock.top_domain))
         return ",".join(out_list)

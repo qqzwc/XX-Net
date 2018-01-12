@@ -43,6 +43,17 @@ import web_control
 # don't remove, launcher web_control need it.
 
 
+def xxnet_version():
+    version_file = os.path.join(root_path, "version.txt")
+    try:
+        with open(version_file, "r") as fd:
+            version = fd.read()
+        return version
+    except Exception as e:
+        xlog.exception("xxnet_version fail")
+    return "get_version_fail"
+
+
 def load_config():
     if len(sys.argv) > 2 and sys.argv[1] == "-f":
         config_path = sys.argv[2]
@@ -79,7 +90,7 @@ def load_config():
     config.set_var("concurent_thread_num", 50)
 
     # min roundtrip on road if connectoin exist
-    config.set_var("min_on_road", 5)
+    config.set_var("min_on_road", 2)
 
     # range 1 - 1000, ms
     config.set_var("send_delay", 100)
@@ -149,15 +160,22 @@ def terminate():
     ready = False
 
 
-def main():
+def main(args):
     global ready
     load_config()
-    g.cert = os.path.abspath(os.path.join(data_path, "CA.crt"))
     g.data_path = data_path
+
+    xlog.info("xxnet_version:%s", xxnet_version())
 
     start()
 
-    g.socks5_server = simple_http_server.HTTPServer((g.config.socks_host, g.config.socks_port), Socks5Server)
+    allow_remote = args.get("allow_remote", 0)
+    if allow_remote:
+        listen_ip = "0.0.0.0"
+    else:
+        listen_ip = g.config.socks_host
+
+    g.socks5_server = simple_http_server.HTTPServer((listen_ip, g.config.socks_port), Socks5Server, logger=xlog)
     xlog.info("Socks5 server listen:%s:%d.", g.config.socks_host, g.config.socks_port)
 
     ready = True
@@ -166,7 +184,7 @@ def main():
 
 if __name__ == '__main__':
     try:
-        main()
+        main({})
     except KeyboardInterrupt:
         terminate()
         import sys
